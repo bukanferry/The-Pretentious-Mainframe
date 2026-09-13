@@ -1,0 +1,62 @@
+@import "tailwindcss";
+
+@theme {
+  --color-paper: #F4F1EA;
+  --color-ink: #1A1A1A;
+  --font-chomsky: 'Chomsky', 'UnifrakturMaguntia', serif;
+  --font-monospace: 'Courier Prime', 'Courier New', monospace;
+  --font-serif: Georgia, 'Times New Roman', serif;
+}
+
+@font-face {
+    font-family: 'Chomsky';
+    src: url('https://cdn.jsdelivr.net/gh/ctrlcctrlv/chomsky@master/dist/Chomsky.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    background-color: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-monospace);
+    margin: 0;
+    padding: 0;
+}
+
+/* Custom Scrollbar for Newspaper Theme */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--color-paper);
+    border-left: 1px solid var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--color-ink);
+}
+
+.ascii-box {
+    border: 1px solid var(--color-ink);
+    position: relative;
+    padding: 1rem;
+}
+
+.ascii-title {
+    position: absolute;
+    top: -0.65rem;
+    left: 1rem;
+    background-color: var(--color-paper);
+    padding: 0 0.25rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+    animation: fadeIn 1.5s ease-out forwards;
+}
